@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular JS</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>">
+	
+</head>
+<body ng-app="myModule" ng-init="">
+	
+	<div ng-model= "NameArray=['Bilal' , 'Bilal1' , 'Bilal2']">
+		<ul>
+			<li ng-repeat="x in NameArray">
+              {{ x }}
+			</li>
+		</ul>
+	</div>
+	
+	<div ng-controller="controller1">
+	<div class="form-group">
+		<label>Username</label>
+		<input type="text" class="form-control"  ng-model="username">
+		<input type="text" class="form-control" readonly="true" value="{{ username }}">
+   </div>
+   </div>
+
+   	<div class="form-group">
+		<label>Username</label>
+		<input type="text" class="form-control"  ng-model="uname">
+   </div>
+
+<div class="form-group">
+   <label>Welcome</label>
+   <input type="text" class="form-control" readonly="true" value="{{ uname }}">
+</div>
+
+<script>
+	var ngMod = angular.module("myModule",[]);
+
+	ngMod.controller("controller1",function($scope) {
+		$scope.username="Two Ways Binding";
+		// body...
+	});
+
+
+</script>
+
+</body>
+</html>>
